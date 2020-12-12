@@ -2,4 +2,4 @@ django
 bs4
 gunicorn
 pathlib
-
+whitenoise
