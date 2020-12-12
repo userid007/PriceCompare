@@ -1,0 +1,38 @@
+{% extends 'compare/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Price Compare</title>
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="hero container text-center">
+        <div class="">
+            <img class="mb-2 rounded-circle" src="{% static 'images/logo.jpeg' %}" alt="" width="200" height="200">
+        </div>
+        <div class="mt-5">
+            <form action="/result" class="form" method="POST">
+                {% csrf_token %}
+                <input id="search" type="search" class="input" name='product_name'
+                       placeholder="What are you looking for?"
+                       required autofocus>
+                <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $("form").submit(function () {
+            $("body").append($("<div class='loading'> Loading&#8230; </div>"))
+
+        });
+        $(document).ready(
+            $('form').toggleClass('hover')
+        )
+    </script>
+{% endblock %}
