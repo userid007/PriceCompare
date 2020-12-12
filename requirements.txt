@@ -1,6 +1,5 @@
 django
 bs4
 gunicorn
-django-heroku
 pathlib
 
