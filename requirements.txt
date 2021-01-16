@@ -4,3 +4,4 @@ gunicorn
 pathlib
 whitenoise
 requests
+beautifulsoup4

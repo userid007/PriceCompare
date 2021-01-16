@@ -42,7 +42,7 @@
         <!-- For Demo Purpose-->
         <header class="text-center mb-5">
             <h2 class="display-4 font-weight-bold">Price Compare</h2>
-            <h3 class="font-weight-bold mb-2">{{ product_name}}</h3>
+            <h3 class="font-weight-bold mb-2">{{ product_name }}</h3>
         </header>
 
         <div class="row pb-5 mb-4">
@@ -51,8 +51,8 @@
                     <!-- Card-->
                     <div class="card rounded shadow-sm border-0">
                         <div class="card-body p-4">
-                            <img src="{{value.image}}" alt="" class="d-block mx-auto mb-3">
-                            <h5><a href="{{ value.url }}" class="text-dark">{{ value.site}}</a></h5>
+                            <img src="{{ value.image }}" alt="" class="d-block mx-auto mb-3">
+                            <h5><a href="{{ value.url }}" class="text-dark">{{ value.site }}</a></h5>
                             <p class="small text-muted font-italic">{{ value.title }}</p>
                             <p>{{ value.price }}</p>
                         </div>
