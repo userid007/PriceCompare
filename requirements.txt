@@ -1,7 +1,6 @@
-django
+django==3.2.12
 bs4
 gunicorn
-pathlib
 whitenoise
 requests
 beautifulsoup4
