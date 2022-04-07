@@ -101,6 +101,7 @@ def amazon(name):
         'User-Agent':
         'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
         'Origin': 'https://www.amazon.in',
+        'Cookie': 'session-id=258-5127268-7202519; i18n-prefs=INR; ubid-acbin=258-8344849-3504350; session-token=wTjeJwB5HWYXOibqn71+8uiZz9nxL7ZwrUkKI+j60pa3otCtlA06mymDGb4MTZzFf5VRWwQkFzlPUp/aPBQrA+SGB/shV+jrUWeKALQxjdD69K+qMPtdQKWVoerWBGbzJKsLGp07lZeujxiNkzTIWJEnNnHkqY5eif+G6ZvUfwtT469H0/3jUI+Z5J4W3UHc; session-id-time=2082787201l'
     }
     title = ""
     url = "https://www.amazon.in"
@@ -114,6 +115,7 @@ def amazon(name):
         res = requests.get(
             f'https://www.amazon.in/s?k={name2}', headers=headers)
         print(res.headers)
+        print(res)
         print("\nSearching in amazon:")
         soup = BeautifulSoup(res.text, 'html.parser')
         title_list = soup.select('.a-size-medium.a-color-base.a-text-normal')
