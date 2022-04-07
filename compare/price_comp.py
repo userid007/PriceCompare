@@ -108,7 +108,7 @@ def amazon(name):
         # res = requests.get(f'https://www.amazon.in/{name1}/s?k={name2}', headers=headers)
         res = requests.get(
             f'https://www.amazon.in/s?k={name2}', headers=headers)
-
+        print(res)
         print("\nSearching in amazon:")
         soup = BeautifulSoup(res.text, 'html.parser')
         title_list = soup.select('.a-size-medium.a-color-base.a-text-normal')
@@ -119,6 +119,7 @@ def amazon(name):
             name = name.upper()
             title = soup.select(
                 '.a-color-base.a-text-normal')[i].getText().strip().upper()
+            print(title)
             if name in title:
                 title = soup.select(
                     '.a-color-base.a-text-normal')[i].getText().strip().upper()
