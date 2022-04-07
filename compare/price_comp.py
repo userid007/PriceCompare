@@ -97,6 +97,11 @@ def flipkart(name):
 
 
 def amazon(name):
+    headers = {
+        'User-Agent':
+        'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
+        'Origin': 'https://www.amazon.in',
+    }
     title = ""
     url = "https://www.amazon.in"
     price = "0"
@@ -108,7 +113,7 @@ def amazon(name):
         # res = requests.get(f'https://www.amazon.in/{name1}/s?k={name2}', headers=headers)
         res = requests.get(
             f'https://www.amazon.in/s?k={name2}', headers=headers)
-        print(res)
+        print(res.headers)
         print("\nSearching in amazon:")
         soup = BeautifulSoup(res.text, 'html.parser')
         title_list = soup.select('.a-size-medium.a-color-base.a-text-normal')
@@ -118,11 +123,11 @@ def amazon(name):
         for i in range(0, amazon_page_length):
             name = name.upper()
             title = soup.select(
-                '.a-color-base.a-text-normal')[i].getText().strip().upper()
+                '.a-size-medium.a-color-base.a-text-normal')[i].getText().strip().upper()
             print(title)
             if name in title:
                 title = soup.select(
-                    '.a-color-base.a-text-normal')[i].getText().strip().upper()
+                    '.a-size-medium.a-color-base.a-text-normal')[i].getText().strip().upper()
                 price = "₹" + \
                     soup.select('.a-price-whole')[i].getText().strip()
                 url += soup.select(
